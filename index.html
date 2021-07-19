@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDo List</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="blueToDo.png" type="image/x-icon">
+    </head>
+    <body>
+         <!--header-->
+    <section id="header2">
+        <header2 class="text-white-600 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+              <a class="flex title-font font-medium items-center text-gray-900 mb-3 md:mb-0">
+                <img src="list-image.png" alt="">
+                <span class="ml-3 text-xl"><strong>ToDo List</strong></span>
+              </a>
+              <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900" href="#"><strong>Home</strong></a>
+                <a class="mr-5 hover:text-gray-900" href="#contact"><strong>Contact</strong></a>
+                
+              </nav>
+    
+            </div>
+          </header>
+        </section>
+          
+        <header class="ct">
+            <h2>What's the Plan for Today?</h2>
+            <div style="color: black;">
+                <label style="color: ghostwhite;">Task: </label>
+                <input class="input" type="text" id="inp" placeholder="Task..." required>
+                <br>
+                <label style="color: ghostwhite;" placeholder="click on dropdown" >Priority: </label>
+                <select style="color: black;" class="input" id="priority" required>
+                  <option value="High" class="High"  selected>High</option>
+                  <option value="Medium"class="Medium">Medium</option>
+                  <option value="Low" class="Low">Low</option>
+                </select>
+                <br><br>
+                <span onclick="addItem()" class="add">Add</span>
+          </div>
+            <br><br>
+            <div class="filterList flex flex-row flex-wrap items-center text-base justify-center">
+                <label>Filter: </label>
+                <span class="filter flex-col flex-wrap" id="all"  onclick="sortList('all')">ALL</span>
+                <span class="filter flex-col flex-wrap" id="Low" class="Low" onclick="sortList('Low')">LOW</span>
+                <span class="filter flex-col flex-wrap" id="Medium" class="Medium" onclick="sortList('Medium')">MEDIUM</span>
+                <span class="filter flex-col flex-wrap" id="High" class="High" onclick="sortList('High')">HIGH</span>
+            </div>
+            <div class="info"><label>Displayed tasks: <span id="inf">0</span></label></div>
+            
+        </header>
+        <div class="taskBody">
+          <div class="scr">
+            <ul id="todos" >
+                <li >Add a new Task! To complete the tasks just click on them. Edit them in the popup window. </li>
+            </ul>
+        </div>
+        </div>
+        <section id="contact">
+            <footer class="text-gray-600 body-font">
+                <div class="bg-gray-100">
+                  <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                    <p class="text-gray-500 text-sm text-center sm:text-left"><strong>© 2021-22 —
+                      <a href="" class="text-gray-600 ml-1" target="_blank">@ShashankHiremath</a></strong>
+                    </p>
+                    <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                      <a class="text-gray-500" href="https://www.facebook.com/shashank.hiremath.735/">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-3 text-gray-500" href="https://twitter.com/Shashan71765490">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-3 text-gray-500" href="https://www.instagram.com/shashan_kh_/">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/shashank-hiremath-10011s6799/">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </footer>
+        </section>
+        
+        <section id="footer">
+            <marquee direction="right"><strong><h1 class="footer" align="center">A TO-DO LIST FAILS WHEN YOU LEAVE OUT the "DO" PART</h1></strong></marquee>
+            <marquee direction="left" class="footer" align="center">Thank You, and Visit Again!</marquee>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
